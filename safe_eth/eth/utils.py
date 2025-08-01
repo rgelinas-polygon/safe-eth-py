@@ -3,6 +3,7 @@ from functools import lru_cache
 from typing import Any, Union
 
 import eth_abi
+import truststore
 from eth._utils.address import generate_contract_address
 from eth_account import Account
 from eth_typing import Address, AnyAddress, ChecksumAddress, Hash32, HexAddress, HexStr
@@ -13,6 +14,7 @@ from web3.types import TxParams, Wei
 
 from safe_eth.util.util import to_0x_hex_str
 
+truststore.inject_into_ssl()
 
 def get_empty_tx_params() -> TxParams:
     """
