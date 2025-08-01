@@ -71,7 +71,7 @@ class TransactionServiceApi(SafeBaseAPI):
         super().__init__(network, ethereum_client, base_url, api_key, request_timeout)
 
     def _get_url_by_network(self, network: EthereumNetwork) -> Optional[str]:
-        return f"{self.TRANSACTION_SERVICE_BASE_URL}/"
+        return f"{self.TRANSACTION_SERVICE_BASE_URL}"
 
     @classmethod
     def data_decoded_to_text(cls, data_decoded: Dict[str, Any]) -> Optional[str]:
