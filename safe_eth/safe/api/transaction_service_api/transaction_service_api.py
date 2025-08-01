@@ -55,7 +55,8 @@ class TransactionServiceApi(SafeBaseAPI):
         EthereumNetwork.X_LAYER_MAINNET: "okb",
         EthereumNetwork.ZKSYNC_MAINNET: "zksync",
     }
-    TRANSACTION_SERVICE_BASE_URL = "https://api.safe.global/tx-service"
+
+    TRANSACTION_SERVICE_BASE_URL = os.environ.get("SAFE_TRANSACTION_SERVICE_URL", "https://api.safe.global/tx-service")
 
     def __init__(
         self,
